@@ -1,16 +1,12 @@
-
----
-
-## 📂 2. Script 01 – INSERTs (01-inserts-uniread.sql)
+## 📂 Script 01 – INSERTs (01-inserts-uniread.sql)
 
 ```sql
 -- 01-inserts-uniread.sql
 -- Populando o mini-mundo UniRead (biblioteca universitária)
 
--- Usar o banco de dados (ajuste o nome se necessário)
 USE uniread_db;
 
--- Limpando dados anteriores (opcional, cuidado em produção!)
+-- Limpando dados anteriores
 -- DELETE FROM Devolucao;
 -- DELETE FROM Emprestimo;
 -- DELETE FROM Exemplar;
@@ -40,7 +36,6 @@ VALUES
 
 ------------------------------------------------------------
 -- TABELA: Livro
--- Supondo que ID_Autor e ID_Categoria são chaves estrangeiras
 ------------------------------------------------------------
 INSERT INTO Livro (ID_Livro, Titulo, ID_Autor, ID_Categoria)
 VALUES
@@ -51,7 +46,6 @@ VALUES
 
 ------------------------------------------------------------
 -- TABELA: Exemplar
--- Supondo que cada livro tem alguns exemplares físicos
 ------------------------------------------------------------
 INSERT INTO Exemplar (ID_Exemplar, ID_Livro, Status)
 VALUES
@@ -81,7 +75,6 @@ VALUES
 
 ------------------------------------------------------------
 -- TABELA: Emprestimo
--- Supondo formato de data 'YYYY-MM-DD'
 ------------------------------------------------------------
 INSERT INTO Emprestimo (ID_Emprestimo, ID_Aluno, ID_Bibliotecario, DataEmprestimo, DataPrevista)
 VALUES
@@ -91,7 +84,6 @@ VALUES
 
 ------------------------------------------------------------
 -- TABELA: Devolucao
--- Alguns empréstimos já foram devolvidos
 ------------------------------------------------------------
 INSERT INTO Devolucao (ID_Devolucao, ID_Emprestimo, DataDevolucao)
 VALUES
